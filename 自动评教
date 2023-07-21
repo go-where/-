@@ -1,0 +1,36 @@
+// ==UserScript==
+// @name         自动评教,保留1个B，你才知道你选的是A
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Select a specific radio option and check all others with value "A".
+// @author       You
+// @match        http://jwxt.wh.sdu.edu.cn/jsxsd/xspj*
+// @grant        none
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    // 获取所有radio选项元素
+    const radioOptions = document.querySelectorAll('input[type="radio"]');
+    // 设置要选中的选项值为"A"
+    const targetValue = "A";
+
+    var flag = true;
+
+    // 遍历所有radio选项元素
+    radioOptions.forEach((radio) => {
+        // 获取radio选项的id
+        const id = radio.id;
+        // 判断是否是要设置为"A"的选项
+
+        if (id.substring(10).includes('_2') && flag == true) {
+            radio.checked = true; // 选中该选项
+            flag = false;
+        }
+
+        if (id.substring(10).includes('_1') && flag == false) {
+            radio.checked = true; // 选中该选项
+        }
+    });
+})();

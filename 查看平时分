@@ -6,6 +6,7 @@
 // @author       You
 // @match        https://service.sdu.edu.cn/*
 // @match        http://jwxt.wh.sdu.edu.cn/*
+// @match        https://webvpn.sdu.edu.cn/*
 // @grant        none
 // ==/UserScript==
 

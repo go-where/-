@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         自动评教,保留1个B，你才知道你选的是A
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.3
 // @description  Select a specific radio option and check all others with value "A".
 // @author       go-where
 // @match        http://jwxt.wh.sdu.edu.cn/jsxsd/xspj*

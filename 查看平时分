@@ -1,0 +1,31 @@
+// ==UserScript==
+// @name         查看平时分
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Modify JsMod function in the webpage.
+// @author       You
+// @match        https://service.sdu.edu.cn/*
+// @match        http://jwxt.wh.sdu.edu.cn/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // 定义新的JsMod函数
+    function JsMod(htmlurl,tmpWidth,tmpHeight){
+        htmlurl=getRandomUrl(htmlurl);
+        var newwin = window.open(htmlurl,window,"dialogWidth:"+tmpWidth+"px;status:no;dialogHeight:"+tmpHeight+"px");
+
+        if(newwin == "refresh" || newwin == "ok"){
+            if(getOs() == "chrome"){
+                window.location.reload(); // 谷歌浏览器要用此方法刷新
+            }else{
+                window.location.href = window.location.href;
+            }
+        }
+    }
+
+    // 替换原来的JsMod函数
+    window.JsMod = JsMod;
+})();

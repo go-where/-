@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         查看平时分
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Modify JsMod function in the webpage.
 // @author       go-where
 // @match        https://service.sdu.edu.cn/*
